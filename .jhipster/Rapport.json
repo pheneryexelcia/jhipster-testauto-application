@@ -1,0 +1,52 @@
+{
+  "annotations": {
+    "changelogDate": "20240206220538"
+  },
+  "applications": "*",
+  "entityTableName": "rapport",
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique", "minlength"],
+      "fieldValidateRulesMinlength": "2"
+    },
+    {
+      "fieldName": "dateStr",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "environnement",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nbtests",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "nbtestsOk",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "nbtestsKo",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "logo",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Rapport",
+  "relationships": [
+    {
+      "otherEntityName": "testAuto",
+      "otherEntityRelationshipName": "rapport",
+      "relationshipName": "testAuto",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}

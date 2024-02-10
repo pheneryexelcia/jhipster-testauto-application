@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (rapport) {
+      <div>
+        <h2 data-cy="rapportDetailsHeading"><span jhiTranslate="orekasApp.rapport.detail.title">Rapport</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ rapport.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="orekasApp.rapport.nom">Nom</span></dt>
+          <dd>
+            <span>{{ rapport.nom }}</span>
+          </dd>
+          <dt><span jhiTranslate="orekasApp.rapport.dateStr">Date Str</span></dt>
+          <dd>
+            <span>{{ rapport.dateStr }}</span>
+          </dd>
+          <dt><span jhiTranslate="orekasApp.rapport.environnement">Environnement</span></dt>
+          <dd>
+            <span>{{ rapport.environnement }}</span>
+          </dd>
+          <dt><span jhiTranslate="orekasApp.rapport.nbtests">Nbtests</span></dt>
+          <dd>
+            <span>{{ rapport.nbtests }}</span>
+          </dd>
+          <dt><span jhiTranslate="orekasApp.rapport.nbtestsOk">Nbtests Ok</span></dt>
+          <dd>
+            <span>{{ rapport.nbtestsOk }}</span>
+          </dd>
+          <dt><span jhiTranslate="orekasApp.rapport.nbtestsKo">Nbtests Ko</span></dt>
+          <dd>
+            <span>{{ rapport.nbtestsKo }}</span>
+          </dd>
+          <dt><span jhiTranslate="orekasApp.rapport.logo">Logo</span></dt>
+          <dd>
+            <span>{{ rapport.logo }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Retour</span>
+        </button>
+
+        <button type="button" [routerLink]="['/rapport', rapport.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editer</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,29 @@
+{
+  "orekasApp": {
+    "testAuto": {
+      "home": {
+        "title": "Test Autos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Test Auto",
+        "createOrEditLabel": "Create or edit a Test Auto",
+        "notFound": "No Test Autos found"
+      },
+      "created": "A new Test Auto is created with identifier {{ param }}",
+      "updated": "A Test Auto is updated with identifier {{ param }}",
+      "deleted": "A Test Auto is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Test Auto {{ id }}?"
+      },
+      "detail": {
+        "title": "Test Auto"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "status": "Status",
+      "categorie": "Categorie",
+      "infos": "Infos",
+      "etapeTest": "Etape Test",
+      "rapport": "Rapport"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (etapeTest) {
+      <div>
+        <h2 data-cy="etapeTestDetailsHeading"><span jhiTranslate="orekasApp.etapeTest.detail.title">Etape Test</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ etapeTest.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="orekasApp.etapeTest.nom">Nom</span></dt>
+          <dd>
+            <span>{{ etapeTest.nom }}</span>
+          </dd>
+          <dt><span jhiTranslate="orekasApp.etapeTest.status">Status</span></dt>
+          <dd>
+            <span>{{ etapeTest.status }}</span>
+          </dd>
+          <dt><span jhiTranslate="orekasApp.etapeTest.infos">Infos</span></dt>
+          <dd>
+            <span>{{ etapeTest.infos }}</span>
+          </dd>
+          <dt><span jhiTranslate="orekasApp.etapeTest.testAuto">Test Auto</span></dt>
+          <dd>
+            @if (etapeTest.testAuto) {
+              <div>
+                <a [routerLink]="['/test-auto', etapeTest.testAuto.id, 'view']">{{ etapeTest.testAuto.nom }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Retour</span>
+        </button>
+
+        <button type="button" [routerLink]="['/etape-test', etapeTest.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editer</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

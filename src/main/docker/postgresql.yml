@@ -6,8 +6,8 @@ services:
     # volumes:
     #   - ~/volumes/jhipster/testautoOrekaApplication/postgresql/:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_USER=testautoOrekaApplication
-      - POSTGRES_PASSWORD=
+      - POSTGRES_USER=jhipster
+      - POSTGRES_PASSWORD=jhipster
       - POSTGRES_HOST_AUTH_METHOD=trust
     healthcheck:
       test: ['CMD-SHELL', 'pg_isready -U $${POSTGRES_USER}']

@@ -1,0 +1,31 @@
+{
+  "orekasApp": {
+    "rapport": {
+      "home": {
+        "title": "Rapports",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Rapport",
+        "createOrEditLabel": "Create or edit a Rapport",
+        "notFound": "No Rapports found"
+      },
+      "created": "A new Rapport is created with identifier {{ param }}",
+      "updated": "A Rapport is updated with identifier {{ param }}",
+      "deleted": "A Rapport is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Rapport {{ id }}?"
+      },
+      "detail": {
+        "title": "Rapport"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "dateStr": "Date Str",
+      "environnement": "Environnement",
+      "nbtests": "Nbtests",
+      "nbtestsOk": "Nbtests Ok",
+      "nbtestsKo": "Nbtests Ko",
+      "logo": "Logo",
+      "testAuto": "Test Auto"
+    }
+  }
+}

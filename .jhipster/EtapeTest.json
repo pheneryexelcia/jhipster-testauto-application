@@ -1,0 +1,33 @@
+{
+  "annotations": {
+    "changelogDate": "20240206220738"
+  },
+  "applications": "*",
+  "entityTableName": "etape_test",
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "infos",
+      "fieldType": "String"
+    }
+  ],
+  "name": "EtapeTest",
+  "relationships": [
+    {
+      "otherEntityField": "nom",
+      "otherEntityName": "testAuto",
+      "relationshipName": "testAuto",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

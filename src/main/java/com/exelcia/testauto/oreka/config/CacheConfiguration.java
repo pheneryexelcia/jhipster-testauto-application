@@ -48,6 +48,11 @@ public class CacheConfiguration {
             createCache(cm, com.exelcia.testauto.oreka.domain.User.class.getName());
             createCache(cm, com.exelcia.testauto.oreka.domain.Authority.class.getName());
             createCache(cm, com.exelcia.testauto.oreka.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.exelcia.testauto.oreka.domain.Rapport.class.getName());
+            createCache(cm, com.exelcia.testauto.oreka.domain.Rapport.class.getName() + ".testAutos");
+            createCache(cm, com.exelcia.testauto.oreka.domain.TestAuto.class.getName());
+            createCache(cm, com.exelcia.testauto.oreka.domain.TestAuto.class.getName() + ".etapeTests");
+            createCache(cm, com.exelcia.testauto.oreka.domain.EtapeTest.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

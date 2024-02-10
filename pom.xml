@@ -271,6 +271,13 @@
             <artifactId>postgresql</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.sahli.asciidoc.confluence.publisher/asciidoc-confluence-publisher-client -->
+        <dependency>
+            <groupId>org.sahli.asciidoc.confluence.publisher</groupId>
+            <artifactId>asciidoc-confluence-publisher-client</artifactId>
+            <version>0.22.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -530,7 +537,7 @@
                     <version>${maven-eclipse-plugin.version}</version>
                     <configuration>
                         <downloadSources>true</downloadSources>
-                        <downloadJavadocs>true</downloadJavadocs>
+                        <!--downloadJavadocs>true</downloadJavadocs-->
                     </configuration>
                 </plugin>
                 <plugin>
@@ -832,9 +839,9 @@
                 <!-- default Spring profiles -->
                 <spring.profiles.active>dev${profile.tls}${profile.no-liquibase}</spring.profiles.active>
                 <profile.test>testdev</profile.test>
-                <liquibase-plugin.url>jdbc:postgresql://localhost:5432/testautoOrekaApplication</liquibase-plugin.url>
-                <liquibase-plugin.username>testautoOrekaApplication</liquibase-plugin.username>
-                <liquibase-plugin.password/>
+                <liquibase-plugin.url>jdbc:postgresql://localhost:5432/oreka</liquibase-plugin.url>
+                <liquibase-plugin.username>jhipster</liquibase-plugin.username>
+                <liquibase-plugin.password>jhipster</liquibase-plugin.password>
             </properties>
             <dependencies>
                 <dependency>

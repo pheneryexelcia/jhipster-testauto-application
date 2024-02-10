@@ -1,0 +1,123 @@
+<div>
+  <h2 id="page-heading" data-cy="TestAutoHeading">
+    <span jhiTranslate="orekasApp.testAuto.home.title">TestAutos</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="orekasApp.testAuto.home.refreshListLabel">Actualiser la liste</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-test-auto"
+        [routerLink]="['/test-auto/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="orekasApp.testAuto.home.createLabel">Créer un nouveau Test Auto</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  @if (testAutos?.length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="orekasApp.testAuto.home.notFound">Aucun Test Auto trouvé</span>
+    </div>
+  }
+
+  @if (testAutos && testAutos.length > 0) {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="nom">
+              <div class="d-flex">
+                <span jhiTranslate="orekasApp.testAuto.nom">Nom</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="status">
+              <div class="d-flex">
+                <span jhiTranslate="orekasApp.testAuto.status">Status</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="categorie">
+              <div class="d-flex">
+                <span jhiTranslate="orekasApp.testAuto.categorie">Categorie</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="infos">
+              <div class="d-flex">
+                <span jhiTranslate="orekasApp.testAuto.infos">Infos</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="rapport.nom">
+              <div class="d-flex">
+                <span jhiTranslate="orekasApp.testAuto.rapport">Rapport</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (testAuto of testAutos; track trackId) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/test-auto', testAuto.id, 'view']">{{ testAuto.id }}</a>
+              </td>
+              <td>{{ testAuto.nom }}</td>
+              <td>{{ testAuto.status }}</td>
+              <td>{{ testAuto.categorie }}</td>
+              <td>{{ testAuto.infos }}</td>
+              <td>
+                @if (testAuto.rapport) {
+                  <div>
+                    <a [routerLink]="['/rapport', testAuto.rapport.id, 'view']">{{ testAuto.rapport.nom }}</a>
+                  </div>
+                }
+              </td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/test-auto', testAuto.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">Voir</span>
+                  </a>
+
+                  <a [routerLink]="['/test-auto', testAuto.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Editer</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(testAuto)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Supprimer</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

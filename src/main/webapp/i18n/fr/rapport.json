@@ -1,0 +1,31 @@
+{
+  "orekasApp": {
+    "rapport": {
+      "home": {
+        "title": "Rapports",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Rapport",
+        "createOrEditLabel": "Créer ou éditer un Rapport",
+        "notFound": "Aucun Rapport trouvé"
+      },
+      "created": "Un nouveau Rapport a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Rapport avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Rapport avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Rapport {{ id }} ?"
+      },
+      "detail": {
+        "title": "Rapport"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "dateStr": "Date Str",
+      "environnement": "Environnement",
+      "nbtests": "Nbtests",
+      "nbtestsOk": "Nbtests Ok",
+      "nbtestsKo": "Nbtests Ko",
+      "logo": "Logo",
+      "testAuto": "Test Auto"
+    }
+  }
+}

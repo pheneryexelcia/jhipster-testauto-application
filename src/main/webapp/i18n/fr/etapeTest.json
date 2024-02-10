@@ -1,0 +1,27 @@
+{
+  "orekasApp": {
+    "etapeTest": {
+      "home": {
+        "title": "EtapeTests",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Etape Test",
+        "createOrEditLabel": "Créer ou éditer un Etape Test",
+        "notFound": "Aucun Etape Test trouvé"
+      },
+      "created": "Un nouveau Etape Test a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Etape Test avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Etape Test avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Etape Test {{ id }} ?"
+      },
+      "detail": {
+        "title": "Etape Test"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "status": "Status",
+      "infos": "Infos",
+      "testAuto": "Test Auto"
+    }
+  }
+}

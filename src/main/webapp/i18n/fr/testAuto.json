@@ -1,0 +1,29 @@
+{
+  "orekasApp": {
+    "testAuto": {
+      "home": {
+        "title": "TestAutos",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Test Auto",
+        "createOrEditLabel": "Créer ou éditer un Test Auto",
+        "notFound": "Aucun Test Auto trouvé"
+      },
+      "created": "Un nouveau Test Auto a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Test Auto avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Test Auto avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Test Auto {{ id }} ?"
+      },
+      "detail": {
+        "title": "Test Auto"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "status": "Status",
+      "categorie": "Categorie",
+      "infos": "Infos",
+      "etapeTest": "Etape Test",
+      "rapport": "Rapport"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+DEFAULT_MIN_LENGTH = 2
+DEFAULT_MAX_LENGTH = 80
+dto * with mapstruct
+enum StatusStep {
+     Passed,
+     Failed,
+     Waiting
+}
+enum StatusTest {
+     OK,
+     KO
+}
+enum Environnement {
+    DEV,
+    PROD
+}
+entity Rapport {
+    id Long required
+    nom String minlength(DEFAULT_MIN_LENGTH)
+    dateStr String pattern(/^(?:20\d{2})(?:0[1-9]|1[0-2])(?:0[1-9]|[1-2]\d|3[0-1])$/) @Index
+    environnement Environnement required defaultValue DEV
+	nbtests Integer
+	nbtestsOk Integer
+	nbtestsKo Integer
+    logo String
+}
+
+entity TestAuto {
+    id Long required
+    dateStr  String pattern(/^(?:20\d{2})(?:0[1-9]|1[0-2])(?:0[1-9]|[1-2]\d|3[0-1])$/) @Index
+    nom String
+	status StatusTest
+    categorie String
+	infos String
+}
+
+entity EtapeTest {
+    id Long required
+    nom String required
+	status StatusStep
+	infos String
+    screenshot ImageBlob
+}
+
+
+relationship OneToMany {
+    Rapport{rapport} to TestAuto
+}
+
+
+relationship OneToMany {
+    TestAuto{test} to EtapeTest
+}
+
+
+

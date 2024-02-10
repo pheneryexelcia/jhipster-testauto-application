@@ -32,9 +32,9 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/testautoOrekaApplication
-    username: testautoOrekaApplication
-    password:
+    url: jdbc:postgresql://localhost:5432/oreka
+    username: jhipster
+    password: jhipster
     hikari:
       poolName: Hikari
       auto-commit: false
